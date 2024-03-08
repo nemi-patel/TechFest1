@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import "./App.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -18,3 +18,7 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+// npm install react-icons
+// npm install react-router-dom
