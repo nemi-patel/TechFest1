@@ -1,15 +1,26 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Component/Login";
+import Navbar from "./Component/Navbar";
+import BackgroundVideo from "./Component/Background";
+import Home from "./Component/Home";
+import Game from "./Component/Game";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
     <>
-      {/* <Routes>
+      {/* <Navbar/> */} 
+      <Routes>
         <Route path="/" index element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
-      </Routes> */}
-      <Login/>
+        <Route path="/navbar" index element={<Navbar />} />
+        <Route path="/background" element={<BackgroundVideo/>} /> 
+        <Route path="/home" element={<Home/>} />
+        {/* <Route path="/game" element={<Game/>} /> */}
+      </Routes>
+      <Footer/>
+      {/* <Login/> */}
+      {/* <Navbar/> */}
     </>
   );
 }

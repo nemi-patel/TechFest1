@@ -1,0 +1,104 @@
+/* .schedule_btn:hover{
+  box-shadow: 0 0 1rem #12f7ff;
+  background: #1d002c;
+  color: #12f7ff;
+} */
+.schedule_btn:hover{
+ text-decoration: none;
+}
+.schedule{
+  background: #121137;
+  padding: 3rem 10%;
+}
+.schedule h2{
+  font-size: 2rem;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #fff;
+}
+.scheduale_card{
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.card img{
+  width: 150px;
+  height: 150px;
+  margin-top: -4rem;
+  filter: drop-shadow(0 0 0.5rem #1797ff);
+}
+.card{
+  background: #fff;
+  padding: 1rem;
+  border: 2px solid #12f7ff;
+  text-align: center;
+  border-radius: 25px;
+  display: block;
+  transition: all .4s ease;
+  z-index: 999;
+}
+.card:hover{
+  cursor: pointer;
+  transform: translateY(-27px);
+}
+.schedule_time_name{
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+}
+.schedule_info{
+  padding-bottom: 0.5rem;
+}
+.schedule_info p{
+  padding: .5rem 0 1.5rem 0;
+  text-align: center;
+}
+.schedule_info .schedual_btn{
+  display: block;
+  text-decoration: none;
+  width: 60%;
+  margin: auto;
+}
+.schedual_btn{
+  display: flex;
+  background: #12f7ff;
+  color: #1d002c;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: .5rem 1rem;
+  transition: all .3s ease;
+  border: 2px solid #121137;
+}
+.schedual_btn:hover{
+  color: #1d002c;
+  text-decoration: none;
+}
+
+/* ----------------------------------------- */
+.schedule_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust as needed */
+}
+
+.card {
+  width: calc(25% - 20px); /* 25% width with gap of 20px between cards */
+  /* Adjust width and gap as needed for responsiveness */
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* 50% width with gap of 20px between cards */
+    /* Adjust width and gap as needed for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Full width on smaller screens */
+    /* Adjust width and styles for smallest screens */
+  }
+}
