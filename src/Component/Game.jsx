@@ -1,5 +1,5 @@
 import React from "react";
-// import "../CSS/game_detail.css"
+import "../CSS/game_detail.css"
 import quiz from "../Image/quiz_big.png"
 import Navbar from "./Navbar";
 function Game() {

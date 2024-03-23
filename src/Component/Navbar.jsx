@@ -21,7 +21,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/event_photo">Event</Link>
+              <Link to="/gallary">Event</Link>
             </li>
             <li>
               <Link to="/game">Game</Link>

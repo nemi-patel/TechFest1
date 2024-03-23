@@ -39,7 +39,7 @@ ul {
   left: 0;
   height: 330px;
   background-size: cover;
-  background-position: 100% 100%;
+  background-position: 100% 100%; 
 }
 .footer-logo {
   margin-bottom: 30px;
@@ -159,7 +159,7 @@ ul {
   color: #878787;
 }
 .pt-5, .py-5 {
-  padding-top: 0rem !important;
+  padding-top: 2rem !important;
   
 }
 .pb-5, .py-5 {
