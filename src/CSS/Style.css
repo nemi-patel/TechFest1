@@ -1,0 +1,38 @@
+
+:root {
+    --color-primary: #363062  ;
+    --color-secondary: #435585  ;
+    --color-primary: #818FB4  ;
+    --color-primary: #F5E8C7  ;
+
+    --color-primary: #1493FF  ;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-box: #ebebeb;
+
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+
+    --border-color-primary: var(--color-primary);
+    --border-color-box: ;
+
+    --box-shadow-color: #0000FF;
+
+
+    --background-black: #000;
+    --background-white: #fff;
+    --background-gray: #ebebeb;
+  }
+
+/* ---------------Apply in jsx file--------------------- */
+
+
+  /* border: 2px solid var(--border-color-primary); */
+  /* color: 'var(--color-primary)'  */
+  /* fontSize: 'var(--font-size-medium)' */
+  /* boxShadow: `0 2px 4px var(--box-shadow-color)` */
+  /* backgroundColor: 'var(--background-primary)' */
+
+
+  /* style={{color: 'var(--color-black)'}} */
