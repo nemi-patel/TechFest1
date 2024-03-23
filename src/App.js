@@ -6,6 +6,7 @@ import BackgroundVideo from "./Component/Background";
 import Home from "./Component/Home";
 import Game from "./Component/Game";
 import Footer from "./Component/Footer";
+import Gallary from "./Component/Gallary";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/navbar" index element={<Navbar />} />
         <Route path="/background" element={<BackgroundVideo/>} /> 
         <Route path="/home" element={<Home/>} />
-        {/* <Route path="/game" element={<Game/>} /> */}
+        <Route path="/game" element={<Game/>} />
+        <Route path="/gallary" element={<Gallary/>} />
       </Routes>
       <Footer/>
       {/* <Login/> */}

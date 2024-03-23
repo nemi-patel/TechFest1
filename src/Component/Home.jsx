@@ -3,6 +3,7 @@ import BackgroundVideo from './Background';
 import Game from './Game';
 import Schedual from './Schedual';
 import Timeline from './Timeline';
+import Map from './Map';
 
 function Home(){
     return(
@@ -11,6 +12,7 @@ function Home(){
             <BackgroundVideo/>
             {/* <Timeline/> */}
             <Schedual />
+            <Map/>
             {/* <Game/> */}
         </>
     )

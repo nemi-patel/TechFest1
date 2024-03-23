@@ -1,5 +1,6 @@
 import React from "react";
 import "../CSS/Footer.css"
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -22,7 +23,8 @@ function Footer() {
                   <i class="fas fa-phone"></i>
                   <div class="cta-text">
                     <h4>Call us</h4>
-                    <span>+91 261 230 0290</span>
+                    <Link to="" onClick={() => window.location = 'https://wa.me/919727769044'} style={{textDecoration:"none",color:"#fff"}}>(+91) 9727769044</Link>
+                    {/* <span>(+91) 9727769044</span> */}
                   </div>
                 </div>
               </div>
@@ -57,15 +59,15 @@ function Footer() {
                   </div>
                   <div class="footer-social-icon">
                     <span>Follow us</span>
-                    <a href="#">
+                    <Link to="" onClick={() => window.location = 'https://www.facebook.com/vvwu.surat'}>
                       <i class="fab fa-facebook-f facebook-bg"></i>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="" onClick={() => window.location = 'https://twitter.com/VanitaWomen'}>
                       <i class="fab fa-twitter twitter-bg"></i>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="" onClick={() => window.location = 'https://vvwusurat.ac.in/'}>
                       <i class="fab fa-google-plus-g google-bg"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
