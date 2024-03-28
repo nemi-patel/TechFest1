@@ -1,0 +1,55 @@
+.General_rules {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .General_rules_title {
+    text-align: center;
+    color: white;
+  }
+  
+  .General_rules_subtitle {
+    text-align: center;
+    color: white;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .General_rules_title {
+      font-size: 24px; /* Adjust font size for smaller screens */
+    }
+    .General_rules{
+        height: 50vh;
+    }
+  }
+  @media (max-width: 1200px){
+    .General_rules{
+        height: 50vh;
+    }
+  }
+  @media (max-width: 1500px){
+    .General_rules{
+        height: 70vh;
+    }
+  }

@@ -37,7 +37,7 @@ body {
 
 /* Hover zoom effect */
 .child-container img::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -55,7 +55,7 @@ body {
 .greeting {
   text-align: center;
   color: lightblue;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 30px;
 }
 

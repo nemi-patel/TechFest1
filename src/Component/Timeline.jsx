@@ -19,7 +19,7 @@ function Timeline() {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  },[]);
 
   return (
     <>
