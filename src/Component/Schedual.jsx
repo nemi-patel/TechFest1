@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../CSS/Schedual.css";
 import { Link } from "react-router-dom";
+import "../CSS/Schedual.css";
 import error from "../Image/error.png";
 
 function Schedual() {
@@ -24,16 +24,17 @@ function Schedual() {
   }, []);
   return (
     <>
-      {/* <div className="schedule" id="schedule">
+      <div className="schedule" id="schedule">
         <h2>GAME DETAILS</h2>
         <div className="scheduale_card">
-          {positions.map((value, index) => (
+        {positions.map((value, index) => (
             <div className="card">
               <img src={value.game_image} alt="" />
               <div className="schedule_info">
                 <div className="schedule_time_name">
                   <h3>{value.game_name}</h3>
-                  <span>11:00 AM TO 12:30 PM</span>
+                  <span>{value.time}</span><br/>
+                  <span>Student Year :{value.Student_year}</span>
                 </div>
                 <p>{value.game_details}</p>
                 <Link to="/game" className="schedule_btn">
@@ -43,8 +44,8 @@ function Schedual() {
             </div>
           ))}
         </div>
-      </div> */}
-      <div className="schedule" id="schedule">
+      </div>
+      {/* <div className="schedule" id="schedule">
         <h2>GAME DETAILS</h2>
         <div className="scheduale_card">
           <div className="card">
@@ -112,7 +113,7 @@ function Schedual() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
