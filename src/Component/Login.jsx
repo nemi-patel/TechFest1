@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../CSS/Login.css";
 import signup from "../Image/signup.png";
+// import { useHistory } from 'react-router-dom';
 import signin from "../Image/signin.png";
 import axios from "axios";
 import {
@@ -13,16 +14,30 @@ import {
   FaPhone,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REGISTRATION|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // --------------------------------1st---------------------
 const Login = () => {
+  // const history = useHistory();
+  // const navigate = useNavigate();
+
   const [isSignUp, setIsSignUp] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [registration, setRegistration] = useState({
-    username: "",
+    student_name: "",
+    college_name: "",
     email: "",
     password: "",
-    // confirmPassword: "",
     mobile_number: "",
+    // confirmPassword: "",
+  });
+  const [login, setLogin] = useState({
+    full_name: "",
+    email: "",
+    password: "",
+    mobile_no: "",
+    // confirmPassword: "",
   });
 
   // -------------------------------2nd-----------------------
@@ -30,11 +45,15 @@ const Login = () => {
     setRegistration({ ...registration, [e.target.name]: e.target.value });
     // console.log(registration);
   };
+  const handleloginChange = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+    // console.log(registration);
+  };
   // -------------------------------3rd-----------------------
   const submiteRegistration = () => {
     try {
       axios
-        .post("http://127.0.0.1:8000/api/register/", registration) 
+        .post("http://127.0.0.1:8000/api/students/", registration)
         .then((data) => {})
         .catch((error) => {
           console.log(error);
@@ -43,6 +62,34 @@ const Login = () => {
       throw error;
     }
   };
+  const submiteLogin = () => {
+    try {
+      axios
+        .post("http://127.0.0.1:8000/api/teacher/", login)
+        .then((response) => {
+          const userData = response.data; 
+          if (
+            userData.full_name === registration.student_name &&
+            userData.email === registration.email &&
+            userData.password === registration.password &&
+            userData.mobile_no === registration.mobile_number
+          ) {
+            setIsAuthenticated(true);
+            alert("Login successfully !!!")
+          } else {
+            alert("Sorry try again !!!")
+            console.log('Login failed. Invalid credentials.');
+          }
+        })
+        .catch((error) => {
+          alert("An error occurred while logging in. Please try again later.");
+          console.log(error);
+        });
+    } catch (error) {
+      throw error;
+    }
+  };
+  
   // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REGISTRATION|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
   //-----------------------UI Design--------------------
@@ -66,15 +113,54 @@ const Login = () => {
               <i className="fas fa-user">
                 <FaUser />
               </i>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                placeholder="Full name"
+                name="full_name"
+                value={login.full_name}
+                onChange={handleloginChange}
+              />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-user">
+                <FaUser />
+              </i>
+              <input
+                type="text"
+                placeholder="E-mail"
+                name="email"
+                value={login.email}
+                onChange={handleloginChange}
+              />
             </div>
             <div className="input-field">
               <i className="fas fa-lock">
                 <FaLock />
               </i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={login.password}
+                onChange={handleloginChange}
+              />
             </div>
-            <input type="submit" value="Login" className="btn solid" />
+            <div className="input-field">
+              <i className="fas fa-lock">
+                <FaLock />
+              </i>
+              <input
+                type="text"
+                placeholder="mobile_no"
+                name="mobile_no"
+                value={login.mobile_no}
+                onChange={handleloginChange}
+              />
+            </div>
+            {/* <input type="submit" value="Login" className="btn solid" /> */}
+            <button className="btn" onClick={submiteLogin}>
+              Login
+            </button>
             <p className="social-text">Or Sign in with social platforms</p>
             <div className="social-media">
               <a href="#" className="social-icon">
@@ -99,9 +185,21 @@ const Login = () => {
               </i>
               <input
                 type="text"
-                placeholder="Username"
-                name="username"
-                value={registration.username}
+                placeholder="student_name"
+                name="student_name"
+                value={registration.student_name}
+                onChange={handleregisterChange}
+              />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-user">
+                <FaUser />
+              </i>
+              <input
+                type="text"
+                placeholder="college_name"
+                name="college_name"
+                value={registration.college_name}
                 onChange={handleregisterChange}
               />
             </div>

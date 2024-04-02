@@ -1,9 +1,22 @@
-import React from "react";
+import React,{useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Map() {
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   return (
     <>
-      <div className="container_map pb-5 pt-0">
+      <div
+        className="container_map pb-5 pt-0"
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
         <iframe
           title="Google Map"
           className="mt-5"

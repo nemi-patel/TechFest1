@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/Footer.css"
 import { Link } from "react-router-dom";
+import vbyte from "../Image/v-bytes.png";
 
 function Footer() {
   return (
@@ -46,7 +47,7 @@ function Footer() {
                   <div class="footer-logo">
                     <a href="index.html">
                       <img
-                        src="https://i.ibb.co/QDy827D/ak-logo.png"
+                        src={vbyte}
                         class="img-fluid"
                         alt="logo"
                       />
@@ -81,18 +82,18 @@ function Footer() {
                       <a href="#">Home</a>
                     </li>
                     <li>
-                      <a href="#">about</a>
+                      <a href="#">Event photo</a>
                     </li>
                     <li>
-                      <a href="#">services</a>
+                      <a href="#">Game  rules</a>
                     </li>
                     <li>
-                      <a href="#">portfolio</a>
+                      <a href="#">Form registration</a>
                     </li>
                     <li>
-                      <a href="#">Contact</a>
+                      <a href="#">Login</a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#">About us</a>
                     </li>
                     <li>
@@ -106,7 +107,7 @@ function Footer() {
                     </li>
                     <li>
                       <a href="#">Latest News</a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

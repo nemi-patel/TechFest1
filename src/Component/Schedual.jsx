@@ -3,10 +3,18 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../CSS/Schedual.css";
 import error from "../Image/error.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Schedual() {
   const [positions, setPositions] = useState([]);
-
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   useEffect(() => {
     try {
       axios
@@ -22,18 +30,30 @@ function Schedual() {
       throw error;
     }
   }, []);
+
   return (
     <>
       <div className="schedule" id="schedule">
-        <h2>GAME DETAILS</h2>
+        <h2
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500">
+          GAME DETAILS
+        </h2>
         <div className="scheduale_card">
-        {positions.map((value, index) => (
-            <div className="card">
-              <img src={value.game_image} alt="" />
+          {positions.map((value, index) => (
+            <div
+              className="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000">
+              {/* <img src={value.game_image} alt="" /> */}
+              <img src={error} alt="" />
               <div className="schedule_info">
                 <div className="schedule_time_name">
                   <h3>{value.game_name}</h3>
-                  <span>{value.time}</span><br/>
+                  <span>{value.time}</span>
+                  <br />
                   <span>Student Year :{value.Student_year}</span>
                 </div>
                 <p>{value.game_details}</p>
@@ -46,74 +66,74 @@ function Schedual() {
         </div>
       </div>
       {/* <div className="schedule" id="schedule">
-        <h2>GAME DETAILS</h2>
-        <div className="scheduale_card">
-          <div className="card">
-            <img src={error} alt="" />
-            <div className="schedule_info">
-              <div className="schedule_time_name">
-                <h3>Code Troika War</h3>
-                <span>11:00 AM TO 12:30 PM</span>
+          <h2>GAME DETAILS</h2>
+          <div className="scheduale_card">
+            <div className="card">
+              <img src={error} alt="" />
+              <div className="schedule_info">
+                <div className="schedule_time_name">
+                  <h3>Code Troika War</h3>
+                  <span>11:00 AM TO 12:30 PM</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laudantium, qui.
+                </p>
+                <Link to="/game" className="schedule_btn">
+                  More detail
+                </Link>
               </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium, qui.
-              </p>
-              <Link to="/game" className="schedule_btn">
-                More detail
-              </Link>
+            </div>
+            <div className="card">
+              <img src={error} alt="" />
+              <div className="schedule_info">
+                <div className="schedule_time_name">
+                  <h3>Code Troika War</h3>
+                  <span>11:00 AM TO 12:30 PM</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laudantium, qui.
+                </p>
+                <Link to="/game" className="schedule_btn">
+                  More detail
+                </Link>
+              </div>
+            </div>
+            <div className="card">
+              <img src={error} alt="" />
+              <div className="schedule_info">
+                <div className="schedule_time_name">
+                  <h3>Code Troika War</h3>
+                  <span>11:00 AM TO 12:30 PM</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laudantium, qui.
+                </p>
+                <Link to="/game" className="schedule_btn">
+                  More detail
+                </Link>
+              </div>
+            </div>
+            <div className="card">
+              <img src={error} alt="" />
+              <div className="schedule_info">
+                <div className="schedule_time_name">
+                  <h3>Code Troika War</h3>
+                  <span>11:00 AM TO 12:30 PM</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laudantium, qui.
+                </p>
+                <Link to="/game" className="schedule_btn">
+                  More detail
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="card">
-            <img src={error} alt="" />
-            <div className="schedule_info">
-              <div className="schedule_time_name">
-                <h3>Code Troika War</h3>
-                <span>11:00 AM TO 12:30 PM</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium, qui.
-              </p>
-              <Link to="/game" className="schedule_btn">
-                More detail
-              </Link>
-            </div>
-          </div>
-          <div className="card">
-            <img src={error} alt="" />
-            <div className="schedule_info">
-              <div className="schedule_time_name">
-                <h3>Code Troika War</h3>
-                <span>11:00 AM TO 12:30 PM</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium, qui.
-              </p>
-              <Link to="/game" className="schedule_btn">
-                More detail
-              </Link>
-            </div>
-          </div>
-          <div className="card">
-            <img src={error} alt="" />
-            <div className="schedule_info">
-              <div className="schedule_time_name">
-                <h3>Code Troika War</h3>
-                <span>11:00 AM TO 12:30 PM</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium, qui.
-              </p>
-              <Link to="/game" className="schedule_btn">
-                More detail
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div> */}
+        </div> */}
     </>
   );
 }

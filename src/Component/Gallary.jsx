@@ -8,39 +8,39 @@ function Gallary() {
       <div class="parent-container">
         <div class="child-container" id="one">
           <img
-            src="https://source.unsplash.com/s4uCgs7qVQc"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/03/img-20240330-wa00066423348321908089757-300x225.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/6Pou6SeJ6cY"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/03/img-20240330-wa00045766916288325398024-300x211.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/QwoNAhbmLLo"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/02/img-20240225-wa0008101957376952966474.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/an-artists-rendering-of-a-distant-object-in-space-fSLGThEmY2Y"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/02/img-20240225-wa0008101957376952966474.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/3yQY9GPM8Mg"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/02/img-20240225-wa0008101957376952966474.jpg"
             width="100%"
             height="auto"
           />
         </div>
         <div class="child-container" id="two">
           <img
-            src="https://source.unsplash.com/QrlCL6DH3yU"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/02/img-20240225-wa0008101957376952966474.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/7bnvNN3R_eo"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/03/img-20240330-wa00033240459084344212276-300x225.jpg"
             width="100%"
             height="auto"
           />
@@ -52,12 +52,12 @@ function Gallary() {
         </div>
         <div class="child-container" id="three">
           <img
-            src="https://source.unsplash.com/UGNXT7QryGA"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/03/img-20240330-wa00057259485435206742005-300x210.jpg"
             width="100%"
             height="auto"
           />
           <img
-            src="https://source.unsplash.com/nc1zsYGkLFA"
+            src="https://vvwusurat.ac.in/wp-content/uploads/2024/03/img-20240330-wa00066423348321908089757-300x225.jpg"
             width="100%"
             height="auto"
           />
