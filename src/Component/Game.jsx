@@ -3,9 +3,19 @@ import axios from "axios";
 import "../CSS/game_detail.css";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import quiz from "../Image/quiz_big.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Game() {
   const [positions, setPositions] = useState([]);
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
 
   useEffect(() => {
     try {
@@ -31,20 +41,26 @@ function Game() {
           <div className="quiz-section">
             <div className="col-5 delivery-img">
               <img
+                src={quiz}
+                alt="Productivity Delivering Experience"
+                title="Delivering Experience Since 2009"
+                data-aos="fade-right"
+              />
+              {/* <img
                 src={value.image}
                 alt="Productivity Delivering Experience"
                 title="Delivering Experience Since 2009"
-              />
+              /> */}
             </div>
             <div className="col-7">
-              <h1 className="sec-heading">{value.game_name}</h1>
-              <h2>
+              <h1 className="sec-heading" data-aos="fade-down">{value.game_name}</h1>
+              <h2 data-aos="fade-left">
                 Accelerating your business growth with Digital Experiences
               </h2>
               <ul>
                 {value.description.split("\n").map((item, itemIndex) => (
                   <li
-                    key={itemIndex}
+                    key={itemIndex} data-aos="fade-left"
                     style={{ listStyle: "none", textAlign: "left" }}>
                     <span style={{ marginRight: "5px" }}>★</span>
                     {item}
@@ -52,8 +68,8 @@ function Game() {
                 ))}
               </ul>
               <br />
-              <div className="btn-footer">
-                <Link to="/form" className="brand-btn">
+              <div className="btn-footer" data-aos="fade-left">
+                <Link to="/form" className="brand-btn" >
                   Register now
                 </Link>
               </div>

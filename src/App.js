@@ -8,10 +8,12 @@ import Game from "./Component/Game";
 import Footer from "./Component/Footer";
 import Gallary from "./Component/Gallary";
 import Form from "./Component/Form";
+import GoToTop from "./Component/GoToTop";
 
 function App() {
   return (
     <>
+    
       {/* <Navbar/> */} 
       <Routes>
         <Route path="/" index element={<Login />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/gallary" element={<Gallary/>} />
         <Route path="/form" element={<Form/>} />
       </Routes>
+      <GoToTop/>
       <Footer/>
       {/* <Login/> */}
       {/* <Navbar/> */}
