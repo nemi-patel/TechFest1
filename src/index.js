@@ -7,11 +7,11 @@ import "./App.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  // {/* </React.StrictMode> */}
 );
 
 // If you want to start measuring performance in your app, pass a function
@@ -23,3 +23,5 @@ reportWebVitals();
 // npm install react-icons
 // npm install react-router-dom
 // npm i axios
+// npm i react-simple-chatbot
+// npm i react-tsparticles

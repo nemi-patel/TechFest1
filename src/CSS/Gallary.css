@@ -19,6 +19,7 @@ body {
 .child-container {
   width: 30%;
   height: auto;
+  margin-top: 105px;
   gap: 30px 30px;
   flex-direction: column;
   position: relative; /* Added position relative for absolute positioning */

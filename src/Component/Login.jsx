@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../CSS/Login.css";
 import signup from "../Image/signup.png";
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import signin from "../Image/signin.png";
 import axios from "axios";
+
 import {
   FaLinkedinIn,
   FaFacebookF,
@@ -16,12 +17,8 @@ import {
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 
-// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REGISTRATION|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-// --------------------------------1st---------------------
 const Login = () => {
-  // const history = useHistory();
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [registration, setRegistration] = useState({
@@ -30,42 +27,85 @@ const Login = () => {
     email: "",
     password: "",
     mobile_number: "",
-    // confirmPassword: "",
   });
   const [login, setLogin] = useState({
     full_name: "",
     email: "",
     password: "",
     mobile_no: "",
-    // confirmPassword: "",
   });
 
-  // -------------------------------2nd-----------------------
   const handleregisterChange = (e) => {
     setRegistration({ ...registration, [e.target.name]: e.target.value });
-    // console.log(registration);
   };
+
   const handleloginChange = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
-    // console.log(registration);
   };
-  // -------------------------------3rd-----------------------
-  const submiteRegistration = () => {
-    try {
-      axios
-        .post("http://127.0.0.1:8000/api/students/", registration)
-        .then((data) => {})
+
+  const validateLoginForm = () => {
+    if (!login.email || !login.password || !login.mobile_no) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+    return true;
+  };
+
+  const validateRegistrationForm = () => {
+    if (!registration.student_name || !registration.college_name || !registration.email || !registration.password || !registration.mobile_number) {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+    return true;
+  };
+
+  const submiteRegistration = (e) => {
+    e.preventDefault();
+    if (validateRegistrationForm()) {
+      axios.post("http://127.0.0.1:8000/api/students/", registration)
+        .then(() => {
+          alert("Registration successful!");
+          setIsSignUp(false); // Reset signup mode
+          setIsAuthenticated(true); // Set authenticated state
+        })
         .catch((error) => {
           console.log(error);
+          alert("An error occurred. Please try again later.");
         });
-    } catch (error) {
-      throw error;
     }
   };
-  const submiteLogin = () => {
-    try {
-      axios
-        .post("http://127.0.0.1:8000/api/teacher/", login)
+
+  // const submiteLogin = (e) => {
+  //   e.preventDefault();
+  //   if (validateLoginForm()) {
+  //     axios.post("http://127.0.0.1:8000/api/teacher/", login)
+  //       .then((response) => {
+  //         const userData = response.data; 
+  //         if (
+  //           userData.full_name === registration.student_name &&
+  //           userData.email === registration.email &&
+  //           userData.password === registration.password &&
+  //           userData.mobile_no === registration.mobile_number
+  //         ) {
+  //           setIsAuthenticated(true);
+  //           alert("Login successfully !!!")
+  //           navigate("/home")
+  //         } else {
+  //           alert("Login successfully  !!!")
+  //           console.log('Login failed. Invalid credentials.');
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         alert("An error occurred while logging in. Please try again later.");
+  //         console.log(error);
+  //       });
+  //   }
+  // };
+
+  const submiteLogin = (e) => {
+    e.preventDefault();
+    if (validateLoginForm()) {
+      axios.post("http://127.0.0.1:8000/api/teacher/", login)
         .then((response) => {
           const userData = response.data; 
           if (
@@ -76,8 +116,14 @@ const Login = () => {
           ) {
             setIsAuthenticated(true);
             alert("Login successfully !!!")
+            navigate("/home");
+
+            // Store login data and generate token
+            localStorage.setItem('userData', JSON.stringify(userData));
+            const token = generateToken(); // You need to implement this function to generate a token
+            localStorage.setItem('token', token);
           } else {
-            alert("Sorry try again !!!")
+            alert("Login failed. Invalid credentials.");
             console.log('Login failed. Invalid credentials.');
           }
         })
@@ -85,14 +131,9 @@ const Login = () => {
           alert("An error occurred while logging in. Please try again later.");
           console.log(error);
         });
-    } catch (error) {
-      throw error;
     }
   };
-  
-  // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REGISTRATION|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-  //-----------------------UI Design--------------------
   const handleSignUpMode = () => {
     setIsSignUp(true);
   };
@@ -100,6 +141,12 @@ const Login = () => {
   const handleSignInMode = () => {
     setIsSignUp(false);
   };
+
+   // Dummy function, replace this with your actual token generation logic
+   const generateToken = () => {
+    return 'dummytoken';
+  };
+
   //-----------------------UI Design--------------------
   return (
     <div
@@ -107,7 +154,7 @@ const Login = () => {
       onSubmit={{}}>
       <div className="forms-container">
         <div className="signin-signup">
-          <form action="#" className="sign-in-form">
+          <form action="/home" className="sign-in-form">
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user">
@@ -177,7 +224,8 @@ const Login = () => {
               </a>
             </div>
           </form>
-          <form action="#" className="sign-up-form">
+          
+          <form action="" className="sign-up-form">
             <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user">
@@ -197,7 +245,7 @@ const Login = () => {
               </i>
               <input
                 type="text"
-                placeholder="college_name"
+                placeholder="collage_name"
                 name="college_name"
                 value={registration.college_name}
                 onChange={handleregisterChange}
@@ -220,7 +268,7 @@ const Login = () => {
                 <FaPhone />
               </i>
               <input
-                type="phone_number"
+                type="text"
                 placeholder="phonenumber"
                 value={registration.mobile_number}
                 name="mobile_number"
@@ -239,17 +287,6 @@ const Login = () => {
                 onChange={handleregisterChange}
               />
             </div>
-            <div className="input-field">
-              <i className="fas fa-lock">
-                <FaLock />
-              </i>
-              <input
-                type="password"
-                placeholder="confirm Password"
-                // onChange={handleregisterChange}
-              />
-            </div>
-
             <button className="btn" onClick={submiteRegistration}>
               Sign Up
             </button>
@@ -277,8 +314,7 @@ const Login = () => {
           <div className="content">
             <h3>New here ?</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
+             Don't have an account ? Register now !!! 
             </p>
             <button className="btn transparent" onClick={handleSignUpMode}>
               Sign up
@@ -290,8 +326,7 @@ const Login = () => {
           <div className="content">
             <h3>One of us ?</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
+              Have an account ? Login now !!
             </p>
             <button className="btn transparent" onClick={handleSignInMode}>
               Sign in

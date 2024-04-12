@@ -1,10 +1,9 @@
-Designed by CodingTuting.Com
 html {
   scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f6f6f6;
+    background-color: #2D4356;
   padding: 0;
   margin: 0;
 }
@@ -18,7 +17,7 @@ h1,
 h2,
 h3 {
   font-family: "roboto";
-  color: #2e2e2e;
+  color: #000;
 }
 
 .col-5 {
@@ -203,7 +202,7 @@ nav {
 }
 
 #delivery {
-  background-color: #f6f6f6;
+  background-color: #435B66;
 }
 
 #delivery img {
@@ -214,6 +213,7 @@ nav {
 #delivery h2 {
   font-weight: 500;
   font-size: 30px;
+  color: #fff;
 }
 
 #delivery p {
@@ -1338,7 +1338,8 @@ a#gotop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+  margin-top: 85px;
 }
 
 .col-5,

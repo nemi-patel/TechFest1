@@ -6,8 +6,20 @@ import { Link } from "react-router-dom";
 import quiz from "../Image/quiz_big.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { loadSlim } from "tsparticles-slim";
+import Particles from "react-tsparticles";
+import { useCallback } from "react";
+
 
 function Game() {
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
   const [positions, setPositions] = useState([]);
   useEffect(() => {
     AOS.init({
@@ -35,7 +47,77 @@ function Game() {
 
   return (
     <>
-      <Navbar />
+      <Navbar style={{positions:"absolute"}} />
+      <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                    links: {
+                        color: "#ffffff",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 6,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 5 },
+                    },
+                },
+                detectRetina: true,
+            }}
+        />
       {positions.map((value, index) => (
         <section key={index} id="delivery" className="code_troika">
           <div className="quiz-section">
@@ -53,7 +135,7 @@ function Game() {
               /> */}
             </div>
             <div className="col-7">
-              <h1 className="sec-heading" data-aos="fade-down">{value.game_name}</h1>
+              <h1 className="sec-heading" data-aos="fade-down" style={{color:"#fff"}}>{value.game_name}</h1>
               <h2 data-aos="fade-left">
                 Accelerating your business growth with Digital Experiences
               </h2>
@@ -61,7 +143,7 @@ function Game() {
                 {value.description.split("\n").map((item, itemIndex) => (
                   <li
                     key={itemIndex} data-aos="fade-left"
-                    style={{ listStyle: "none", textAlign: "left" }}>
+                    style={{ listStyle: "none", textAlign: "left",color:"#fff" }}>
                     <span style={{ marginRight: "5px" }}>★</span>
                     {item}
                   </li>

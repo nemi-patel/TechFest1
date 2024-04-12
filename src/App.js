@@ -9,11 +9,13 @@ import Footer from "./Component/Footer";
 import Gallary from "./Component/Gallary";
 import Form from "./Component/Form";
 import GoToTop from "./Component/GoToTop";
+import Particle from "./Component/Particle";
+import New_navbar from "./Component/New_navbar";
+import ChatBot from "./Component/Chatbot";
 
 function App() {
   return (
     <>
-    
       {/* <Navbar/> */} 
       <Routes>
         <Route path="/" index element={<Login />} />
@@ -21,10 +23,12 @@ function App() {
         <Route path="/background" element={<BackgroundVideo/>} /> 
         <Route path="/home" element={<Home/>} />
         <Route path="/game" element={<Game/>} />
-        <Route path="/gallary" element={<Gallary/>} />
+        <Route path="/gallery" element={<Gallary/>} />
         <Route path="/form" element={<Form/>} />
+        <Route path="/new_navbar" element={<New_navbar/>} />
       </Routes>
       <GoToTop/>
+      <ChatBot/>
       <Footer/>
       {/* <Login/> */}
       {/* <Navbar/> */}

@@ -18,7 +18,7 @@ li {
   text-align: center;
 }
 header {
-  /* position: absolute; */
+  position: absolute;
   background: #96a0a954;
   width: 92%;
   height: 92px;

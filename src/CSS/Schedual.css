@@ -7,7 +7,7 @@
  text-decoration: none;
 }
 .schedule{
-  background: #121137;
+  background: #2D4356;
   padding: 3rem 10%;
 } 
 .schedule h2{
@@ -26,8 +26,8 @@
   gap: 20px;
 }
 .card img{
-  width: 150px;
-  height: 150px;
+  width: 111px;
+  height: 111px;
   margin-top: -4rem;
   filter: drop-shadow(0 0 0.5rem #1797ff);
 }

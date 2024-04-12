@@ -15,8 +15,7 @@ function General_rules() {
   return (
     <>
       <div
-        className="General_rules"
-        style={{ backgroundImage: `url(${background})` }}>
+        className="General_rules">
         <div className="overlay" />
         <div className="content">
           <h1

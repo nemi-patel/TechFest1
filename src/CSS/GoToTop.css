@@ -5,15 +5,15 @@ position: relative; */
 
 .top-btn {
   font-size: 1.4rem;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   color: #fff;
-  background-color: skyblue;
+  background-color: #6e48aa;
   /* box-shadow: ${({ theme }) => theme.colors.shadow}; */
   border-radius: 50%;
   position: fixed;
-  bottom: 5rem;
-  right: 5rem;
+  bottom: 6rem;
+  right: 2rem;
   z-index: 999;
   display: flex;
   justify-content: center;
