@@ -8,6 +8,7 @@ import General_rules from './General_rules';
 import Form from './Form';
 import Payment from './Payment';
 import Timeline_new from './New_timeline';
+import Particle from './Particle';
 
 function Home(){
     return(
@@ -22,6 +23,7 @@ function Home(){
             <Payment/>
             {/* <Form/> */}
             {/* <Game/> */}
+            {/* <Particle/> */}
         </>
     )
 }

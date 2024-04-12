@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../CSS/Schedual.css";
-import error from "../Image/error.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -47,8 +46,8 @@ function Schedual() {
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
               data-aos-duration="2000">
-              {/* <img src={value.game_image} alt="" /> */}
-              <img src={error} alt="" />
+              <img src={value.game_image} alt="" />
+              {/* <img src={error} alt="" /> */}
               <div className="schedule_info">
                 <div className="schedule_time_name">
                   <h3>{value.game_name}</h3>
